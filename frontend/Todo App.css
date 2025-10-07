@@ -1,0 +1,54 @@
+
+.navbar {
+  position: fixed;    
+  top: 0;              
+  width: 100%;         
+  background-color: #331d87;
+  color: red;
+  padding: 10px;
+  z-index: 1000;   
+      
+}
+.nitin{
+    position: fixed; 
+    top: 13%;
+    width: 100%;
+    z-index: 1000;
+}
+.nav{
+    display: flex;
+    justify-content: center;
+}
+.ram{
+  position: fixed;    
+  bottom: 0;              
+  width: 100%;
+  height:20%;         
+  padding: 10px;
+  z-index: 1000; 
+    background-color: rgb(17, 175, 243);
+}
+.scroll-box {
+   border: 2px solid #ccc;
+  border-radius: 12px; 
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  position: fixed;
+   background-color: #fff;
+  top:30%;
+   padding: 10px;
+  z-index: 1000;
+  width: 280px;
+  height: 400px;
+  overflow-y: auto; 
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.satyam{
+   
+     display: flex;
+  justify-content: center;
+  align-items: center;
+   height: 100vh;
+}
+
+
