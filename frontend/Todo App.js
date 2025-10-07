@@ -4,7 +4,8 @@ let inp = document.querySelector("input");
 let ol = document.querySelector("ol");
 
 // 🌐 Backend API URL
-const API_URL = "http://localhost:5000/api/tasks";
+// const API_URL = "http://localhost:5000/api/tasks";
+const API_URL = 'https://todo-app-api-qd8o.onrender.com'; 
 
 // -------------------
 // 1️⃣ Load tasks from backend when page loads
