@@ -1,11 +1,12 @@
-
+// let btna = document.getElementById("ro");
 let btna = document.querySelector("button");
 let inp = document.querySelector("input");
+// let inp = document.getElementById("taskInput");
 let ol = document.querySelector("ol");
 
 // 🌐 Backend API URL
 // const API_URL = "http://localhost:5000/api/tasks";
-const API_URL = 'https://todo-app-api-qd8o.onrender.com'; 
+const API_URL = 'https://todo-app-api-qd8o.onrender.com/api/tasks'; 
 
 // -------------------
 // 1️⃣ Load tasks from backend when page loads
