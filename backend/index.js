@@ -40,13 +40,30 @@ app.use(express.json());
 
 // === CORS POLICY UPDATE ===
 // We explicitly allow the live Netlify domain to make requests to this API.
-const allowedOrigin = 'https://todoappfullstac.netlify.app';
+// const allowedOrigin = 'https://todoappfullstac.netlify.app';
+// Server Code में, यह बदलाव करें:
+
+// 1. उन सभी URLs की एक List बनाएँ जहाँ आपका Frontend चल रहा है।
+const allowedOrigins = [
+    // जब आपका Frontend Localhost (Live Server) पर चलता है:
+    'http://127.0.0.1:5500', 
+    'http://localhost:5500', 
+    
+    // जब आपका Frontend Deploy (Netlify) हो जाता है:
+    'https://todoappfullstac.netlify.app'
+];
 
 app.use(cors({
-  origin: allowedOrigin,
-  // Add other necessary methods your frontend uses (GET/POST/PUT/DELETE)
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
-  credentials: true 
+  origin: function (origin, callback) {
+        // चेक करें कि रिक्वेस्ट का 'origin' Allowed List में है या नहीं।
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true); // Allow the request
+        } else {
+            callback(new Error('Not allowed by CORS')); // Block the request
+        }
+    },
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+  credentials: true 
 }));
 // ==========================
 
